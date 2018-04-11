@@ -1,295 +1,331 @@
 <html>
-	<head>
-		<title>VENTAS H.</title>
-		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-	</head>
-	<style>
-@font-face {
-    font-family: text;
-    src: url("/myriad-set-pro_text.ttf");
-}
-@font-face {
-    font-family: thin;
-    src: url("/myriad-set-pro_thin.ttf");
-}
-@font-face {
-    font-family: bold;
-    src: url("/myriad-set-pro_bold.ttf");
-}
-/* width */
-::-webkit-scrollbar {
-width: 10px;
-    border-left: 2px solid #B78879;
-}
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: transparent; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #484848; 
-}
+<head>
+    <title>VENTAS H.</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<style>
+    @font-face {
+        font-family: text;
+        src: url("/myriad-set-pro_text.ttf");
+    }
+    
+    @font-face {
+        font-family: thin;
+        src: url("/myriad-set-pro_thin.ttf");
+    }
+    
+    @font-face {
+        font-family: bold;
+        src: url("/myriad-set-pro_bold.ttf");
+    }
+    /* width */
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+        border-left: 2px solid #B78879;
+    }
+    /* Track */
+    
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    /* Handle */
+    
+    ::-webkit-scrollbar-thumb {
+        background: #484848;
+    }
+    /* Handle on hover */
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: transparent;
+    }
+    
+    #menu {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        width: 25%;
+        background-color: #000;
+    }
+    
+    .item {
+        margin: 10%;
+    }
+    
+    .item-text {
+        color: #FFFFFF;
+        font-family: bold;
+        font-size: 80%;
+        background-color: rgba(255, 255, 255, 0.10);
+        padding: 10%;
+        word-break: break-all;
+        border-right: 6px solid #FFEB3B;
+    }
+    
+    #images {
+        display: none;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 25%;
+    }
+    
+    #home {
+        display: none;
+        background-image: url("/img0.png");
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 25%;
+    }
+    
+    #title-box {
+        padding: 6px;
+        background-color: rgba(255, 255, 255, 0.75);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        margin: 10%;
+        margin-left: 0px;
+        border-top: 2px solid #FFFFFF;
+        border-bottom: 2px solid #FFFFFF;
+        border-right: 2px solid #FFFFFF;
+        border-radius: 4px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    
+    #title {
+        color: #000000;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: text;
+        margin-left: 16px;
+        text-shadow: 0px 0px 16px #FFFFFF;
+    }
+    
+    #message-box {
+        padding: 3%;
+        background-color: rgba(45, 45, 45, 0.90);
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border-top: 2px solid #232222;
+    }
+    
+    #message {
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: bold;
+    }
+    
+    #img1 {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 50%;
+        bottom: 50%;
+        background-image: url("/img1.png");
+        background-size: cover;
+        background-position: center;
+        border: 2px solid;
+        border-right: 1px solid #000000;
+    }
+    
+    #img2 {
+        position: absolute;
+        left: 50%;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        background-image: url("/img2.png");
+        background-size: cover;
+        background-position: center;
+        border: 2px solid;
+        border-left: 1px solid #000000;
+    }
+    
+    #img3 {
+        position: absolute;
+        height: 50%;
+        left: 0px;
+        right: 50%;
+        bottom: 0px;
+        background-image: url("/img3.png");
+        background-size: cover;
+        background-position: center;
+        border: 2px solid;
+        border-right: 1px solid #000000;
+    }
+    
+    #images-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 96px;
+        height: 96px;
+        margin-left: -48px;
+        margin-top: -48px;
+        border-radius: 50%;
+        background: #000000;
+    }
+    
+    #images-title {
+        color: #FFFFFF;
+        font-family: bold;
+        margin-top: 39px;
+    }
+    
+    #details {
+        display: none;
+        overflow-y: auto;
+        position: absolute;
+        left: 25%;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        background-color: #E8E5C8;
+    }
+    
+    .details-title {
+        font-family: thin;
+        font-size: 30px;
+        padding: 5%;
+        background-color: #FFFFFF;
+        border-top: 2px solid #B78879;
+        border-bottom: 2px solid #B78879;
+        color: #6B3625;
+    }
+    
+    .details-normal {
+        font-family: bold;
+        margin: 5%;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        color: #826C4B;
+    }
+    
+    #pay {
+        display: none;
+        overflow-y: auto;
+        position: absolute;
+        left: 25%;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        background-color: #CBDEB6;
+    }
+    
+    #pay-title {
+        font-family: thin;
+        font-size: 30px;
+        padding: 5%;
+        background-color: #FFFFFF;
+        border-top: 2px solid #8BC34A;
+        border-bottom: 2px solid #8BC34A;
+        color: #4A7517;
+    }
+    
+    .pay-normal {
+        font-family: bold;
+        margin: 5%;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        color: #566D3C;
+    }
+    
+    #offer {
+        color: #777034;
+        background-color: #FFEB3B;
+        padding: 16px;
+        border-radius: 4px;
+        border: 2px solid;
+    }
+    
+    #percent {
+        color: #272303;
+    }
+    
+    .link {
+        color: #484848;
+    }
+</style>
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: transparent; 
-}
-	#menu {
-		position: absolute;
-	    top: 0px;
-	    left: 0px;
-	    bottom: 0px;
-	    width: 25%;
-	    background-color: #000;
-	}
-	.item {
-		margin: 10%;
-	}
-	.item-text {
-color: #FFFFFF;
-    font-weight: bold;
-    font-size: 80%;
-    background-color: rgba(255,255,255,0.10);
-    padding: 10%;
-    word-break: break-all;
-    border-right: 6px solid #FFEB3B;
-	}
-	#images {
-		display: none;
-	    position: absolute;
-	    top: 0px;
-	    right: 0px;
-	    bottom: 0px;
-	    left: 25%;
-	}
-	#home {
-		display: none;
-		background-image: url("/img0.png");
-	    background-size: cover;
-	    background-position: center;
-	    position: absolute;
-	    top: 0px;
-	    right: 0px;
-	    bottom: 0px;
-	    left: 25%;
-	}
-	#title-box {
-    padding: 6px;
-    background-color: rgba(255,255,255,0.75);
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    margin: 10%;
-    margin-left: 0px;
-    border-top: 2px solid #FFFFFF;
-    border-bottom: 2px solid #FFFFFF;
-    border-right: 2px solid #FFFFFF;
-border-radius: 4px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-	}
-	#title {
-    color: #000000;
-    font-weight: bold;
-    font-size: 20px;
-    font-family: text;
-    margin-left: 16px;
-    text-shadow: 0px 0px 16px #FFFFFF;
-	}
-	#message-box {
-padding: 3%;
-    background-color: rgba(45,45,45,0.90);
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    border-top: 2px solid #232222;
-	}
-	#message {
-color: #FFFFFF;
-    font-weight: bold;
-    font-size: 18px;
-    font-family: bold;
-	}
-#img1 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 50%;
-    bottom: 50%;
-    background-image: url("/img1.png");
-    background-size: cover;
-    background-position: center;
-    border: 2px solid;
-    border-right: 1px solid #000000;
-}
-#img2 {
-position: absolute;
-    left: 50%;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    background-image: url("/img2.png");
-    background-size: cover;
-    background-position: center;
-    border: 2px solid;
-    border-left: 1px solid #000000;
-}
-#img3 {
-    position: absolute;
-    height: 50%;
-    left: 0px;
-    right: 50%;
-    bottom: 0px;
-    background-image: url("/img3.png");
-    background-size: cover;
-    background-position: center;
-    border: 2px solid;
-    border-right: 1px solid #000000;
-}
-#images-box {
-position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 96px;
-    height: 96px;
-    margin-left: -48px;
-    margin-top: -48px;
-    border-radius: 50%;
-    background: #000000;
-}
-#images-title {
-    color: #FFFFFF;
-    font-family: bold;
-    margin-top: 39px;
-}
-#details {
-	display: none;
-	overflow-y: auto;
-position: absolute;
-    left: 25%;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    background-color: #E8E5C8;
-}
-.details-title {
-font-family: thin;
-    font-size: 30px;
-    padding: 5%;
-    background-color: #FFFFFF;
-    border-top: 2px solid #B78879;
-    border-bottom: 2px solid #B78879;
-    color: #6B3625;
-}
-.details-normal {
-    font-family: bold;
-    margin: 5%;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    color: #826C4B;
-}
-#pay {
-display: none;
-overflow-y: auto;
-    position: absolute;
-    left: 25%;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    background-color: #CBDEB6;
-}
-#pay-title {
-font-family: thin;
-    font-size: 30px;
-    padding: 5%;
-    background-color: #FFFFFF;
-    border-top: 2px solid #8BC34A;
-    border-bottom: 2px solid #8BC34A;
-    color: #4A7517;
-}
-.pay-normal {
-    font-family: bold;
-    margin: 5%;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    color: #566D3C;
-}
-#offer {
-    color: #777034;
-    background-color: #FFEB3B;
-    padding: 16px;
-    border-radius: 4px;
-    border: 2px solid;
-}
-#percent {
-    color: #272303;
-}
-.link {
-	color: #484848;
-}
-	</style>
-	<body>
-		<div id="computer">
-			<div id="menu">
-				<div class="item">
-					<p class="item-text" onclick="navigate('home');">INICIO</p>
-					<p class="item-text" onclick="navigate('images');">IMAGENES</p>
-					<p class="item-text" onclick="navigate('details');">DETALLES</p>
-					<p class="item-text" onclick="navigate('pay');">COMPRAR</p>
-				</div>
-			</div>
-			<div id="home">
-				<div id="title-box"><p id="title">PROPIEDAD EN AZAHARES</p></div>
-				<div id="message-box"><p id="message">UN LUGAR PARA DESPEDIRTE DE TUS SERES QUERIDOS</p></div>
-			</div>
-			<div id="details">
-				<div>
-					<p class="details-title">Propiedad en Venta</p>
-					<p class="details-normal">Ubicacion: Cementerio Los Parques, Lote 2 y Bloque 85, <a class="link" href="https://goo.gl/maps/kYZT29zA6p22">ver en Google Maps ></a></p>
-					<p class="details-normal">Cavidades: 7</p>
-					<p class="details-normal">Criptas: 3</p>
-					<p class="details-normal">Osarios: 4</p>
-					<p class="details-normal">Precio: Q120,000</p>
-					<p class="details-normal">Enganche: Q45,000</p>
-					<p class="details-normal">Mensualidades: Q2,000</p>
-					<p class="details-normal">Moneda de pago: Quetzal Guatemalteco (GTQ)</p>
-					<p class="details-normal">Terminos: sujetos a (Los parques sociedad anonima), Es ajeno a ideas politicas o religiosas y autoriza en sus instalaciones la celebracion de ritos y cultos religiosos siempre y cuando no sean costumbres contrarias a la ley, la moral o las buenas costumbres.</p>
-				</div>
-			</div>
-			<div id="images">
-				<div id="img1"></div>
-				<div id="img2"></div>
-				<div id="img3"></div>
-				<div id="images-box" align="center"><p id="images-title">IMAGENES</p></div>
-			</div>
-			<div id="pay">
-				<div>
-					<p id="pay-title">Comprar</p>
-					<p class="pay-normal">Para comprar esta propiedad comuniquese con Amilcar Ramirez.</p>
-					<p class="pay-normal">Telefono: XXXX-XXXX</p>
-					<p class="pay-normal">Correo: xxxx@xxxx.xxx</p>
-					<br>
-					<p id="offer" class="pay-normal">Al comprar al contado usted obtendra el <span id="percent">10%</span> de descuento, esta oferta es por tiempo limitado.</p>
-				</div>
-			</div>
-		</div>
-		<script>
-		var arrayId = ["home","details","images","pay"];
-		function navigate(a) {
-			for (var i in arrayId) {
-				if (arrayId[i] !== a) {
-					document.getElementById(arrayId[i]).style.display = "none";
-				} else {
-					document.getElementById(arrayId[i]).style.display = "block";
-				}
-			}
-		}
-		navigate('home');
-		</script>
-	</body>
+<body>
+    <div id="computer">
+        <div id="menu">
+            <div class="item">
+                <p class="item-text" onclick="navigate('home');">INICIO</p>
+                <p class="item-text" onclick="navigate('images');">IMAGENES</p>
+                <p class="item-text" onclick="navigate('details');">DETALLES</p>
+                <p class="item-text" onclick="navigate('pay');">COMPRAR</p>
+            </div>
+        </div>
+        <div id="home">
+            <div id="title-box">
+                <p id="title">PROPIEDAD EN AZAHARES</p>
+            </div>
+            <div id="message-box">
+                <p id="message">UN LUGAR PARA DESPEDIRTE DE TUS SERES QUERIDOS</p>
+            </div>
+        </div>
+        <div id="details">
+            <div>
+                <p class="details-title">Propiedad en Venta</p>
+                <p class="details-normal">Ubicacion: Cementerio Los Parques, Lote 2 y Bloque 85, <a class="link" href="https://goo.gl/maps/kYZT29zA6p22">ver en Google Maps ></a></p>
+                <p class="details-normal">Cavidades: 7</p>
+                <p class="details-normal">Criptas: 3</p>
+                <p class="details-normal">Osarios: 4</p>
+                <p class="details-normal">Precio: Q120,000</p>
+                <p class="details-normal">Enganche: Q45,000</p>
+                <p class="details-normal">Mensualidades: Q2,000</p>
+                <p class="details-normal">Moneda de pago: Quetzal Guatemalteco (GTQ)</p>
+                <p class="details-normal">Terminos: sujetos a (Los parques sociedad anonima), Es ajeno a ideas politicas o religiosas y autoriza en sus instalaciones la celebracion de ritos y cultos religiosos siempre y cuando no sean costumbres contrarias a la ley, la moral o las buenas costumbres.</p>
+            </div>
+        </div>
+        <div id="images">
+            <div id="img1"></div>
+            <div id="img2"></div>
+            <div id="img3"></div>
+            <div id="images-box" align="center">
+                <p id="images-title">IMAGENES</p>
+            </div>
+        </div>
+        <div id="pay">
+            <div>
+                <p id="pay-title">Comprar</p>
+                <p class="pay-normal">Para comprar esta propiedad comuniquese con Amilcar Ramirez.</p>
+                <p class="pay-normal">Telefono: XXXX-XXXX</p>
+                <p class="pay-normal">Correo: xxxx@xxxx.xxx</p>
+                <br>
+                <p id="offer" class="pay-normal">Al comprar al contado usted obtendra el <span id="percent">10%</span> de descuento, esta oferta es por tiempo limitado.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var arrayId = ["home", "details", "images", "pay"];
+
+        function navigate(a) {
+            for (var i in arrayId) {
+                if (arrayId[i] !== a) {
+                    document.getElementById(arrayId[i]).style.display = "none";
+                } else {
+                    document.getElementById(arrayId[i]).style.display = "block";
+                }
+            }
+        }
+        navigate('home');
+    </script>
+</body>
+
 </html>
